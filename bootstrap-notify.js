@@ -354,14 +354,12 @@
 				}
 			});
 
-			setTimeout(function () {
-				if (!hasAnimation) {
-					self.$ele.remove();
-					if (self.settings.onClosed) {
-						self.settings.onClosed(self.$ele);
-					}
+			if (!hasAnimation) {
+				self.$ele.remove();
+				if (self.settings.onClosed) {
+					self.settings.onClosed(self.$ele);
 				}
-			}, 600);
+			}
 		},
 		reposition: function (posX) {
 			var self = this,
